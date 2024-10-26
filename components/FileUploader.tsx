@@ -70,10 +70,11 @@ const FileUploader = () => {
       });
       
       setFiles([]);
-    } catch (error) {
+    } catch (err) {
+      console.error(err);
       toast({
         title: "Error",
-        description: "Failed to upload files",
+        description: err instanceof Error ? err.message : "Failed to upload files",
         variant: "destructive"
       });
     } finally {
@@ -127,7 +128,7 @@ const FileUploader = () => {
                   </div>
                   <Button
                     variant="ghost"
-                    size="icon"
+                    size="sm"
                     onClick={() => removeFile(index)}
                   >
                     <X className="h-4 w-4" />
