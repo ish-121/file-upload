@@ -1,4 +1,6 @@
-"use client"
+// components\ui\toaster
+
+"use client";
 
 import {
   Toast,
