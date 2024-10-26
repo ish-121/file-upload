@@ -1,13 +1,13 @@
 {
   "extends": [
     "next/core-web-vitals",
-    "next/typescript"
+    "next/typescript",
+    "prettier"
   ],
-  "plugins": ["@typescript-eslint"],
   "rules": {
-    "@typescript-eslint/no-unused-vars": ["error", {
-      "varsIgnorePattern": "actionTypes|error",
+    "@typescript-eslint/no-unused-vars": ["warn", {
       "argsIgnorePattern": "^_",
+      "varsIgnorePattern": "^(actionTypes|error)$",
       "ignoreRestSiblings": true
     }]
   }
