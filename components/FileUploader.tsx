@@ -58,7 +58,9 @@ const FileUploader = () => {
           body: formData,
         });
 
-        if (!response.ok) throw new Error('Upload failed');
+        if (!response.ok) {
+          throw new Error(`Upload failed: ${await response.text()}`);
+        }
         
         // Update progress
         setProgress(((i + 1) / files.length) * 100);
@@ -70,7 +72,7 @@ const FileUploader = () => {
       });
       
       setFiles([]);
-    } catch (err) {
+    } catch (err: unknown) {
       console.error(err);
       toast({
         title: "Error",
