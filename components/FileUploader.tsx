@@ -72,11 +72,11 @@ const FileUploader = () => {
       });
       
       setFiles([]);
-    } catch (err: unknown) {
-      console.error(err);
+    } catch (error: unknown) {
+      console.error(error);
       toast({
         title: "Error",
-        description: err instanceof Error ? err.message : "Failed to upload files",
+        description: error instanceof Error ? error.message : "Failed to upload files",
         variant: "destructive"
       });
     } finally {
