@@ -115,16 +115,16 @@ const FileUploader = () => {
 
         {files.length > 0 && (
           <div className="mt-6">
-            <h3 className="text-sm font-medium mb-4">Selected Files:</h3>
+            <h3 className="text-sm font-medium mb-4 text-foreground">Selected Files:</h3>
             <div className="space-y-2">
               {files.map((file, index) => (
                 <div
                   key={index}
-                  className="flex items-center justify-between p-2 bg-gray-50 rounded"
+                  className="flex items-center justify-between p-2 bg-gray-50 dark:bg-gray-800 rounded"
                 >
                   <div className="flex items-center space-x-2">
-                    <span className="text-sm">{file.name}</span>
-                    <span className="text-xs text-gray-500">
+                    <span className="text-sm font-medium text-foreground">{file.name}</span>
+                    <span className="text-xs text-gray-600 dark:text-gray-300">
                       ({(file.size / 1024 / 1024).toFixed(2)} MB)
                     </span>
                   </div>
